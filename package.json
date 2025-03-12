@@ -1,0 +1,28 @@
+{
+  "name": "community-event-finder",
+  "version": "1.0.0",
+  "description": "a community event finder that allows users to filter events based on event type, mode, duration, and related topics, and displays the results on a web page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tt5321/Community-Event-Finder.git"
+  },
+  "keywords": [],
+  "author": "Tiantian Ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tt5321/Community-Event-Finder/issues"
+  },
+  "homepage": "https://github.com/tt5321/Community-Event-Finder#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3"
+  }
+}
