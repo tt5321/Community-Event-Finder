@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/tt5321/Community-Event-Finder",
+  "homepage": "https://tt5321.github.io/Community-Event-Finder",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
