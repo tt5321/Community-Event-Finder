@@ -8,7 +8,7 @@ https://tt5321.github.io/Community-Event-Finder/
 1. Download the zip file and unzip
 2. Install modules
     ```
-    git clone 
+    npm install
     ```
 3. To start running the application:
     ```
