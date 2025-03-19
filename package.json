@@ -1,28 +1,34 @@
 {
   "name": "community-event-finder",
-  "version": "1.0.0",
-  "description": "a community event finder that allows users to filter events based on event type, mode, duration, and related topics, and displays the results on a web page.",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tt5321/Community-Event-Finder.git"
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "firebase": "^11.4.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.3.0"
   },
-  "keywords": [],
-  "author": "Tiantian Ma",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tt5321/Community-Event-Finder/issues"
-  },
-  "homepage": "https://github.com/tt5321/Community-Event-Finder#readme",
   "devDependencies": {
     "@eslint/js": "^9.22.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-react": "^7.37.4",
-    "globals": "^16.0.0",
-    "prettier": "^3.5.3"
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
+    "vite": "^6.2.0"
   }
 }
