@@ -1,8 +1,18 @@
 import EventRow from "./EventRow.jsx";
 
+/**
+ * A component used in EventFinderPage for displaying filtered events in a table
+ * @module EventTable
+ * @param {Array} events
+ * @param {Array} fList - filter critertas
+ * @param {Function} onRowCheckChange
+ * @returns {{JSX.Element}}
+ */
 function EventTable({ events, fList, onRowCheckChange }) {
     const rows = [];
     const now = new Date();
+    
+    // Filter events based on criteria, and sorted based on start time
     const filterEvents = events.filter(event => {
       return (
         (fList[0] === "" || event.type === fList[0]) && 
@@ -15,6 +25,7 @@ function EventTable({ events, fList, onRowCheckChange }) {
     }).sort((a, b) => new Date(a.start) - new Date(b.start));
 
 
+    // Display each event in an EventRow
     filterEvents.forEach((event) => {
       rows.push(
         <EventRow
@@ -23,7 +34,8 @@ function EventTable({ events, fList, onRowCheckChange }) {
           onCheckBoxChange={onRowCheckChange} />
       );
     });
-  
+
+    // Render the table header and EventRow list
     return (
       <table className="table">
         <thead className="thead-tr">

@@ -12,6 +12,12 @@ import {
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+
+/**
+ * FireStoreHandler function that deals with Firestore API and provides interfaces to this app
+ * @module MyFireStoreHandler
+ * @returns {Object} -  keys = myDB.fetch, myDB.fetch, myDB.updateR, myDB.delete, values = corresponding functions
+ */
 function MyFireStoreHandler() {
     const myDB = {}
     // Your web app's Firebase configuration
@@ -26,9 +32,12 @@ function MyFireStoreHandler() {
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-
     const db = getFirestore(app);
 
+    /**
+     * Asynchronous function to get all events
+     * @returns {Array}
+     */
     async function fetchEvents() {
       try {
         const querySnapshot = await getDocs(collection(db, "events"));
@@ -41,6 +50,10 @@ function MyFireStoreHandler() {
       }
     };
     
+    /**
+     * Asynchronous function to create an event
+     * @returns {void}
+     */
     async function createEvent ({ eName, eMode, eType, eStart, eEnd, eLocation, eTopics, eRegister }) {
       const dur = (new Date(eEnd) - new Date(eStart)) / 60000;
       const eventData = {name: eName, mode: eMode, type: eType, start: eStart, end: eEnd, duration: dur, registered: eRegister, location: eLocation, topics: eTopics};
@@ -53,6 +66,10 @@ function MyFireStoreHandler() {
       }
     };
 
+    /**
+     * Asynchronous function to update an event's registered field
+     * @returns {void}
+     */
     async function updateRegisterStatus ({ eid, estatus }) {
       try {
         const eventRef = doc(db, "events", eid);
@@ -63,6 +80,10 @@ function MyFireStoreHandler() {
       }
     }
 
+    /**
+     * Asynchronous function to delete an event
+     * @returns {void}
+     */
     async function deleteEvent ({ eid }) {
      try {
       await deleteDoc(doc(db, "events", eid));
@@ -71,6 +92,7 @@ function MyFireStoreHandler() {
       console.error("Error deleting event:", error);
      }
     };
+
 
     myDB.fetch = fetchEvents;
     myDB.add = createEvent;

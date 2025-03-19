@@ -6,11 +6,18 @@ import { myDB} from '../db/MyFirestoreDB.js';
 import { Link } from "react-router-dom";
 import '../styles.css';
 
+/**
+ * CreateEventPage for Creaing an event (/create_event)
+ * @module CreateEventPage
+ * @returns {{JSX.Element}}
+ */
 function CreateEventPage() {
+    // options for Selectbox
     const modeOptions = ["", "In-person", "Virtual", "In-person & Virtual"];
     const registerOptions = ["", "true", "false"];
     const typeOptions = ["", "Social Event", "Workshop", "Lecture", "Networking Event", "Club Event", "Leisure Activity", "Others"];
 
+    // states
     const [cname, setName] = useState("");
     const [cmode, setMode] = useState("");
     const [ctype, setType] = useState("");
@@ -20,15 +27,21 @@ function CreateEventPage() {
     const [clocation, setLocation] = useState("");
     const [ctopics, setTopics] = useState("");
 
+    /**
+     * A function to create event in datasore and clear display when the submit button on CreateEventPage is clicked
+     */
     async function handleSubmit() {
-        const registerstatus = creg === "true";
+        const registerstatus = creg === "true"; // convert input string ("true" "false" "") to boolean 
         console.log(registerstatus);
         const eventData = {eName: cname, eMode: cmode, eType: ctype, eStart: cstart, eEnd: cend, eRegister: registerstatus, eLocation: clocation, eTopics: ctopics};
-        const hasUnFilled = Object.values(eventData).some(value => value === undefined  || value === "");
+        const hasUnFilled = Object.values(eventData).some(value => value === undefined  || value === ""); 
         if (hasUnFilled) {
+            // check if there is any unfilled field
             alert("Please fill all fileds to submit!");
         } else {
+            // create event in datastore
             await myDB.add(eventData);
+            // clear states and display
             alert("Success: event created!");
             setName("");
             setMode("");
@@ -41,6 +54,7 @@ function CreateEventPage() {
         }
     }
 
+    // Render page title, event details, and "Back to Home" & "Submit" buttons
     return (
         <div>
             <h1>Create a New Event</h1>
@@ -58,8 +72,8 @@ function CreateEventPage() {
                 <Link to="/"><button className="back-button">Back to Home</button></Link>
                 <button className="submitbutton" onClick={handleSubmit}>Submit</button>
             </div>
-            {/* <h3>name: {cname}, mode: {cmode}, type: {ctype}, start: {cstart}, end: {cend}, registered: {creg}, location: {clocation}, topics: {ctopics}</h3> */}
         </div>
     )
 }
+
 export default CreateEventPage;

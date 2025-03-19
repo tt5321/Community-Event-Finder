@@ -1,4 +1,14 @@
+/**
+ * A component used in CreateEventPage and DeleteEventPage for text entry
+ * @module TextBox
+ * @param {String} title
+ * @param {String} defaultText
+ * @param {String} item
+ * @param {Function} onEnter
+ * @returns {{JSX.Element}}
+ */
 function TextBox({ title, defaultText, item, onEnter }) {
+    // Render a text box with a title
     return (
         <div className="custom-label">
             <label className="keyword">{title}: </label>

@@ -1,9 +1,19 @@
+/**
+ * A component used in Deletable component for displaying event in a row
+ * @module DeleteRow
+ * @param {Object} event 
+ * @param {boolean} checked
+ * @param {Function} onCheckBoxChange
+ * @returns {{JSX.Element}}
+ */
 function DeleteRow({ event, checked, onCheckBoxChange }) {
+    // highlight registered events' names in blue  
     const name = !event.registered ? event.name :
       <span style={{ color: 'blue' }}>
         {event.name}
       </span>;
   
+    // Render checkbox for a event and event details and check. The checkbox is used to select events for deletion.
     return (
       <tr>
         <td>

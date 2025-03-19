@@ -1,8 +1,17 @@
 import DeleteRow from "./DeleteRow";
 
+/**
+ * A component used in DeleteEventPage for displaying events in a table
+ * @module DeleteTable
+ * @param {Array} events
+ * @param {Array} selects
+ * @param {Function} onRowCheckChange
+ * @returns {{JSX.Element}}
+ */
 function DeleteTable({ events, selects, onRowCheckChange }) {
     const rows = [];
 
+    // Push events into DeleteRow
     events.forEach((event) => {
       rows.push(
         <DeleteRow
@@ -12,6 +21,7 @@ function DeleteTable({ events, selects, onRowCheckChange }) {
       );
     });
   
+    // Render the table header and DeleteRow list
     return (
       <table>
         <thead>
