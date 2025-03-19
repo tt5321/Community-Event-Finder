@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Community-Event-Finder">
       <Routes>
         <Route path="/" element={<EventFinderPage />} />
         <Route path="/create_event" element={<CreateEventPage />} />
