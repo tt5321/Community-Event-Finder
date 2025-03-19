@@ -113,6 +113,7 @@ function Selectbox({keyword, options, item, onSelectChange}) {
 # Other Notes
 1. On the home page, the design was intended to show only the filtered events within the next 7 days. However, since the data set is small now, so I displayed all the filtered events from now.
 2. I do not have time to implement the optional timeline feature in design.
+3. The Start and End time fields on the CreateEventPage will not be validated, so please enter correct and logical times.
 
 # Author
 Tiantian Ma
