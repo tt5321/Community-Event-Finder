@@ -8,13 +8,13 @@ https://tt5321.github.io/Community-Event-Finder/
 1. Download the zip file and unzip
 2. Install modules
     ```
-    git clone 
+    npm install
     ```
 3. To start running the application:
     ```
     npm run dev
     ```
-4. Visit the http://localhost:5173/
+4. Visit the http://localhost:5173/Community-Event-Finder/
 
 # Using the application
 - On the Home Page (EventFinderPage):
@@ -113,7 +113,6 @@ function Selectbox({keyword, options, item, onSelectChange}) {
 # Other Notes
 1. On the home page, the design was intended to show only the filtered events within the next 7 days. However, since the data set is small now, so I displayed all the filtered events from now.
 2. I do not have time to implement the optional timeline feature in design.
-3. For the "Topics" select box for the purpose of filter, the options for select box were intended to attain from the datastore. Due to time limit, currently I just hardcoded some options.
 
 # Author
 Tiantian Ma

@@ -4,14 +4,18 @@ import { useState } from 'react';
 /**
  * A component used in EventFinderPage for filter opions
  * @module FilterBar
+ * @param {Array} e
  * @param {Function} setFList
  * @returns {{JSX.Element}}
  */
-function FilterBar({ setFList }){
+function FilterBar({ e, setFList}){
     // filter options
     const eventType = ["", "Social Event", "Workshop", "Lecture", "Networking Event", "Club Event", "Leisure Activity", "Others"];
     const eventMode = ["", "In-person", "Virtual", "Both"];
-    const topics = ["", "CS", "Engineer", "Privacy"]; // hard code for now, need to change data from datastores
+    const topics = e.reduce((acc, event) => {
+        const eventTopics = event.topics.split(/[,\s]+/).filter(Boolean);
+        return [...new Set([...acc, ...eventTopics])];
+    }, [""]); // use ChatGPT (see AI use #8)
     const duration = ["", 15, 30, 60, 90, 120, 300, 1440];
 
     // states
