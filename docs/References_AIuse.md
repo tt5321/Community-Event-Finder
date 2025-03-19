@@ -40,3 +40,21 @@
 - Model: ChatGPT 4o mini
 - AI Response: Provided different deployment methods for a React project, including the steps for platforms like Vercel, Netlify, GitHub Pages, etc. 
 - Use: Use AI to learn how to deploy and follow its delopment method for GitHub Pages
+
+8. Prompt: 
+- Prompt: Does the following code has any problem? I want the result as list
+```
+   e.forEach((event) => {
+        const eventTopics = event.topics.split(/[,\s]+/).filter(Boolean);
+        eventTopics.forEach((t) => {
+          if (!topics.includes(t)) {
+            return ([...topics, t]);
+          } else {
+            return topics;
+          }
+        })
+      });
+```
+- Model: ChatGPT 4o
+- AI response: Explained the error (ForEach will not return array, should use reduce), and provide solutoin using Set and reduce.
+- Use: I tried to write my own code but failed, refined AI's answer by appending details. Then I used it in  "topics" definition in FilterBar.jsx

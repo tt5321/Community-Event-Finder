@@ -40,7 +40,7 @@ function EventFinderPage() {
     return (
       <div>
         <HeaderBar />
-        <FilterBar setFList={setFilterList} />
+        <FilterBar setFList={setFilterList} e={events} />
         {/* <TimelineBar events={events} /> // not implemented yet */} 
         <div style={{ marginTop: '20px' , fontSize: '13px' }}>* Event list for all times:</div>
         <EventTable events={events} fList={filterList} onRowCheckChange={handleRegisterChange}/>
