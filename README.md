@@ -5,7 +5,7 @@ A community event finder that allows users to filter events based on event type,
 Visit: https://tt5321.github.io/Community-Event-Finder/
 
 # Setting Up in Development Mode (local)
-1. Download the zip file and unzip
+1. Download the zip file and unzip, go to the Community-Event-Finder-main/
 2. Install modules
     ```
     npm install
