@@ -2,7 +2,8 @@ import '../styles.css';
 import { useState } from 'react';
 
 /**
- * A component used in FilterBar and CreateEventPage for drop-down selection
+ * A component used in FilterBar and CreateEventPage for drop-down selection.
+ * Implement Module design patterns.
  * @module Selectbox
  * @param {String} keyword 
  * @param {Array} options 

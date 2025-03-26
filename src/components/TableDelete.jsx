@@ -1,20 +1,22 @@
-import DeleteRow from "./DeleteRow";
+import RowDelete from "./RowDelete.jsx";
 
 /**
- * A component used in DeleteEventPage for displaying events in a table
- * @module DeleteTable
+ * A Table used in DeleteEventPage for displaying events and selecting events for deletion in a table.
+ * Implement Module design patterns.
+ * @module TableDelete
  * @param {Array} events
  * @param {Array} selects
  * @param {Function} onRowCheckChange
  * @returns {{JSX.Element}}
  */
-function DeleteTable({ events, selects, onRowCheckChange }) {
+function TableDelete({ events, selects, onRowCheckChange }) {
     const rows = [];
 
     // Push events into DeleteRow
     events.forEach((event) => {
       rows.push(
-        <DeleteRow
+        <RowDelete
+          key={event.id} 
           event={event}
           checked={selects.includes(event.id)}
           onCheckBoxChange={onRowCheckChange} />
@@ -43,4 +45,4 @@ function DeleteTable({ events, selects, onRowCheckChange }) {
     );
   }
 
-  export default DeleteTable;
+  export default TableDelete;

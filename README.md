@@ -1,10 +1,10 @@
 # Community-Event-Finder
 A community event finder that allows users to filter events based on event type, mode, duration, and related topics, and displays the results on a web page.
 
-# Visit website
-https://tt5321.github.io/Community-Event-Finder/
+# Visit website (public)
+Visit: https://tt5321.github.io/Community-Event-Finder/
 
-# Setting up in development mode
+# Setting up in development mode (local)
 1. Download the zip file and unzip
 2. Install modules
     ```
@@ -47,50 +47,11 @@ https://tt5321.github.io/Community-Event-Finder/
 - Update: click the "registered" checkbox to update the registration status for events and updates to the firestore
 - Delete: delete selected events
 
-# Implementation of functional programming
-- Using funtions instead of classes, and all components are created with functions
-- No global variables and loose functions, only one export per file
-- Use states and state setters to update states without mutability to the original data, e.g.
-```
-// In DeleteEventPage.jsx
-function DeleteEventPage () {
-    // ...
-    const [selectedIds, setSelectedIds] = useState([]);
-    //...
-
-    function handleCheckChange(id, checked) {
-        if (checked) {
-            setSelectedIds((prevIds) => [...prevIds, id]);
-        } else {
-            setSelectedIds((prevIds) =>
-              prevIds.filter((selected) => selected !== id)
-            );
-        }
-    }
-    // ...
-}
-```
-- Use high order functions, e.g.
-```
-// In Selectbox.jsx: parameter "onSelectChange" is a function
-/**
- * A component used in FilterBar and CreateEventPage for drop-down selection
- * @module Selectbox
- * @param {String} keyword 
- * @param {Array} options 
- * @param {String} item
- * @param {Function} onSelectChange
- * @returns {{JSX.Element}}
- */
-function Selectbox({keyword, options, item, onSelectChange}) {
-    //...
-}
-```
-
 # Key Files
 - docs/: documentation files
     - Business requirements
     - Jsdocs
+    - FunctionProammingExplain.md: explanation of use of functional programming
     - References_AIuse.md：reference & ai use during code implementation process
 - src/: code
     - components/: contains defined components used in pages (each component in one file as one module)
@@ -102,18 +63,22 @@ function Selectbox({keyword, options, item, onSelectChange}) {
 
 # Deployment
 - Deployed on GitHub Pages
+- Deployed on Firebase
 
 # Video
-- Youtube Link: 
+- Demo Video: 
+- Supporting Video: 
 
 # Mockups & Diagram
 - Mockups & React Hierarchy: https://www.figma.com/design/L13WAOoRMawlsu2mxm0Vnz/Project2-Community-Event-Finder?node-id=0-1&t=i65rLGUAfrD2dtqb-1
 - Diagram: https://lucid.app/lucidchart/fee285ff-907f-4b1a-bc3a-cbdeb1ef7adb/edit?viewport_loc=-140%2C-583%2C2319%2C1119%2C0_0&invitationId=inv_0e014ad7-cf66-48f7-bc70-d5075f094c5b
 
+# Link to Business Requirement
+- Google Docs: https://docs.google.com/document/d/1qRCQSE9SHuTE6u9jNDf-xhhGAVm-m2gR0mIXiIU5IhY/edit?usp=sharing
+
 # Other Notes
 1. On the home page, the design was intended to show only the filtered events within the next 7 days. However, since the data set is small now, so I displayed all the filtered events from now.
 2. I do not have time to implement the optional timeline feature in design.
-3. The Start and End time fields on the CreateEventPage will not be validated, so please enter correct and logical times.
 
 # Author
 Tiantian Ma

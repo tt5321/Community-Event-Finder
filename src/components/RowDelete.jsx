@@ -1,12 +1,13 @@
 /**
- * A component used in Deletable component for displaying event in a row
- * @module DeleteRow
+ * A component used in Deletable component for displaying event in a row.
+ * Implement Module design patterns.
+ * @module RowDelete
  * @param {Object} event 
  * @param {boolean} checked
  * @param {Function} onCheckBoxChange
  * @returns {{JSX.Element}}
  */
-function DeleteRow({ event, checked, onCheckBoxChange }) {
+function RowDelete({ event, checked, onCheckBoxChange }) {
     // highlight registered events' names in blue  
     const name = !event.registered ? event.name :
       <span style={{ color: 'blue' }}>
@@ -32,4 +33,4 @@ function DeleteRow({ event, checked, onCheckBoxChange }) {
     );
   }
 
-export default DeleteRow;
+export default RowDelete;

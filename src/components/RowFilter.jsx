@@ -1,11 +1,12 @@
 /**
- * A component used in EventTable component for displaying event in a row
- * @module EventRow
+ * A component used in EventTable component for displaying event in a row.
+ * Implement Module design patterns.
+ * @module RowFilter
  * @param {Object} event 
  * @param {Function} onCheckBoxChange
  * @returns {{JSX.Element}}
  */
-function EventRow({ event, onCheckBoxChange }) {
+function RowFilter({ event, onCheckBoxChange }) {
   // highlight registered events' names in blue  
   const name = !event.registered ? event.name :
       <span style={{ color: 'blue' }}>
@@ -30,4 +31,4 @@ function EventRow({ event, onCheckBoxChange }) {
   );
   }
 
-export default EventRow;
+export default RowFilter;

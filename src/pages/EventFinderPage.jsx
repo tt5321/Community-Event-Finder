@@ -1,11 +1,12 @@
 import HeaderBar from "../components/HeaderBar.jsx"
 import FilterBar from "../components/FilterBar.jsx"
-import EventTable from "../components/EventTable.jsx";
+import TableFilter from "../components/TableFilter.jsx";
 import { useState, useEffect } from 'react';
 import { myDB } from "../db/MyFirestoreDB.js";
 
 /**
- * EventFinderPage for filtering events (Home Page)
+ * EventFinderPage for filtering events (Home Page).
+ * Implement Module design patterns.
  * @module EventFinderPage
  * @returns {{JSX.Element}}
  */
@@ -43,7 +44,7 @@ function EventFinderPage() {
         <FilterBar setFList={setFilterList} e={events} />
         {/* <TimelineBar events={events} /> // not implemented yet */} 
         <div style={{ marginTop: '20px' , fontSize: '13px' }}>* List of events starting after the current time:</div>
-        <EventTable events={events} fList={filterList} onRowCheckChange={handleRegisterChange}/>
+        <TableFilter events={events} fList={filterList} onRowCheckChange={handleRegisterChange}/>
       </div>
     )
 }

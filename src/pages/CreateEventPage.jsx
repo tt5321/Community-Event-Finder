@@ -1,13 +1,13 @@
-import TextBox from "../components/TextBox.jsx";
 import Selectbox from '../components/Selectbox.jsx';
-import TimeTextBox from "../components/TimeTextBox.jsx";
+import Textbox from '../components/Textbox.jsx';
 import { useState } from 'react';
 import { myDB} from '../db/MyFirestoreDB.js';
 import { Link } from "react-router-dom";
 import '../styles.css';
 
 /**
- * CreateEventPage for Creaing an event (/create_event)
+ * CreateEventPage for Creaing an event (/create_event).
+ * Implement Module design patterns.
  * @module CreateEventPage
  * @returns {{JSX.Element}}
  */
@@ -59,13 +59,13 @@ function CreateEventPage() {
         <div>
             <h1>Create a New Event</h1>
             <div>
-                <TextBox title="Name" defaultText="Enter event name..." item={cname} onEnter={setName} />
+                <Textbox type="normal" title="Name" defaultText="Enter event name..." item={cname} onEnter={setName} />
                 <Selectbox keyword="Event Type: " options={typeOptions} item={ctype} onSelectChange={setType} />
                 <Selectbox keyword='Event Mode: ' options={modeOptions} item={cmode} onSelectChange={setMode} />
-                <TimeTextBox title="Start Time" onEnter={setStart} />
-                <TimeTextBox title="End Time"onEnter={setEnd} />
-                <TextBox title="Location" defaultText="Enter location..." item={clocation} onEnter={setLocation}/>
-                <TextBox title="Related Topics" defaultText="Enter related topics..." item={ctopics} onEnter={setTopics} />
+                <Textbox type="time" title="Start Time" onEnter={setStart} />
+                <Textbox type="time" title="End Time"onEnter={setEnd} />
+                <Textbox type="normal" title="Location" defaultText="Enter location..." item={clocation} onEnter={setLocation}/>
+                <Textbox type="normal" title="Related Topics" defaultText="Enter related topics..." item={ctopics} onEnter={setTopics} />
                 <Selectbox keyword='Registered Already? ' options={registerOptions} item={creg} onSelectChange={setReg} />
             </div>
             <div>

@@ -1,14 +1,15 @@
-import EventRow from "./EventRow.jsx";
+import RowFilter from "./RowFilter.jsx";
 
 /**
- * A component used in EventFinderPage for displaying filtered events in a table
- * @module EventTable
+ * A Table used in EventFinderPage for displaying filtered events in a table.
+ * Implement Module design patterns.
+ * @module TableFilter
  * @param {Array} events
  * @param {Array} fList - filter critertas
  * @param {Function} onRowCheckChange
  * @returns {{JSX.Element}}
  */
-function EventTable({ events, fList, onRowCheckChange }) {
+function TableFilter({ events, fList, onRowCheckChange }) {
     const rows = [];
     const now = new Date();
     
@@ -28,9 +29,9 @@ function EventTable({ events, fList, onRowCheckChange }) {
     // Display each event in an EventRow
     filterEvents.forEach((event) => {
       rows.push(
-        <EventRow
+        <RowFilter
           event={event}
-          key={event.name} 
+          key={event.id} 
           onCheckBoxChange={onRowCheckChange} />
       );
     });
@@ -56,4 +57,4 @@ function EventTable({ events, fList, onRowCheckChange }) {
     );
   }
 
-  export default EventTable;
+  export default TableFilter;

@@ -2,7 +2,8 @@ import Selectbox from './Selectbox.jsx'
 import { useState } from 'react';
 
 /**
- * A component used in EventFinderPage for filter opions
+ * A component used in EventFinderPage for filter opions.
+ * Implement Module design patterns.
  * @module FilterBar
  * @param {Array} e
  * @param {Function} setFList

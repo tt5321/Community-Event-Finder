@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Textbox.jsx</title>
+    <title>JSDoc: Source: components/TextboxNormal.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Textbox.jsx</h1>
+    <h1 class="page-title">Source: components/TextboxNormal.jsx</h1>
 
     
 
@@ -26,30 +26,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import TextboxNormal from "./TextboxNormal.jsx";
-import TextboxTime from "./TextboxTime.jsx"
-
-/**
- * Textbox component used in CreateEventPage and DeleteEventPage for text entry
- * Two different types: (1) normal textbox (2) time textbox
- * Factory design pattern.
- * @module Textbox
- * @param {String} type
+            <pre class="prettyprint source linenums"><code>/**
+ * A component used in CreateEventPage and DeleteEventPage for text entry.
+ * Implement Module design patterns.
+ * @module TextboxNormal
  * @param {String} title
  * @param {String} defaultText
  * @param {String} item
  * @param {Function} onEnter
  * @returns {{JSX.Element}}
  */
-function Textbox({ type, title, onEnter, defaultText, item }){
-    const types = {
-        normal: &lt;TextboxNormal title={title} onEnter={onEnter} defaultText={defaultText} item={item} />,
-        time: &lt;TextboxTime title={title} onEnter={onEnter} />
-    };
-    return types[type];
+function TextboxNormal({ title, defaultText, item, onEnter }) {
+    // Render a text box with a title
+    return (
+        &lt;div className="custom-label">
+            &lt;label className="keyword">{title}: &lt;/label>
+            &lt;form>
+                &lt;input className="custom-textbox" type="text" placeholder={defaultText} value={item} onChange={(e) => onEnter(e.target.value)}/>
+            &lt;/form>
+        &lt;/div>
+    );
 }
 
-export default Textbox;</code></pre>
+export default TextboxNormal;</code></pre>
         </article>
     </section>
 

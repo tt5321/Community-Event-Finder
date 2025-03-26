@@ -1,12 +1,13 @@
-import TextBox from "../components/TextBox.jsx";
-import DeleteTable from "../components/DeleteTable.jsx";
+import Textbox from "../components/Textbox.jsx";
+import TableDelete from "../components/TableDelete.jsx";
 import { useState, useEffect } from 'react';
 import { myDB } from "../db/MyFirestoreDB.js";
 import { Link } from "react-router-dom";
 import '../styles.css';
 
 /**
- * DeleteEventPage for deleting selected events (/delete_event)
+ * DeleteEventPage for deleting selected events (/delete_event).
+ * Implement Module design patterns.
  * @module DeleteEventPage
  * @returns {{JSX.Element}}
  */
@@ -64,7 +65,11 @@ function DeleteEventPage () {
      */
     async function handleDelete(selectList) {
         await Promise.all(selectList.map((id) => myDB.delete({ eid: id }))); //Use ChatGPT (see References_AIuse.md prompt #3)
+        alert("Delete the selected events done!");
         setEvents((prevEvents) =>
+            prevEvents.filter((event) => !selectList.includes(event.id))
+        );
+        setAllEvents((prevEvents) =>
             prevEvents.filter((event) => !selectList.includes(event.id))
         );
     }
@@ -73,8 +78,8 @@ function DeleteEventPage () {
     return (
         <div>
             <h1>Delete an Event</h1>
-            <TextBox title="Search Event" defaultText="Enter event name" item={searchwords} onEnter={handleSearch}/>
-            <DeleteTable events={events} selects={selectedIds} onRowCheckChange={handleCheckChange} />
+            <Textbox type="normal" title="Search Event" defaultText="Enter event name" item={searchwords} onEnter={handleSearch}/>
+            <TableDelete events={events} selects={selectedIds} onRowCheckChange={handleCheckChange} />
             <div> 
                 <Link to="/"><button className="back-button">Back to Home</button></Link>
                 <button className="delete-button" onClick={() => handleDelete(selectedIds)}>Delete</button>

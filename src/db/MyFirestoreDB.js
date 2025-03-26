@@ -15,6 +15,7 @@ import {
 
 /**
  * FireStoreHandler function that deals with Firestore API and provides interfaces to this app
+ * Implement Singlton and Module design patterns.
  * @module MyFireStoreHandler
  * @returns {Object} -  keys = myDB.fetch, myDB.fetch, myDB.updateR, myDB.delete, values = corresponding functions
  */

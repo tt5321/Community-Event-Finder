@@ -3,7 +3,8 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 /**
- * A component used in EventFinderPage for displaying headers and create/delete event buttons
+ * A component used in EventFinderPage for displaying headers and create/delete event buttons.
+ * Implement Module design patterns.
  * @module HeaderBar
  * @returns {{JSX.Element}}
  */
