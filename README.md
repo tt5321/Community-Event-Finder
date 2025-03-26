@@ -1,10 +1,10 @@
 # Community-Event-Finder
-A community event finder that allows users to filter events based on event type, mode, duration, and related topics, and displays the results on a web page.
+A community event finder that allows users to filter events based on event type, mode, duration, and related topics, and displays the results in chronological order on a web page.
 
-# Visit website (public)
+# Visit Deployed Website (public)
 Visit: https://tt5321.github.io/Community-Event-Finder/
 
-# Setting up in development mode (local)
+# Setting Up in Development Mode (local)
 1. Download the zip file and unzip
 2. Install modules
     ```
@@ -16,7 +16,7 @@ Visit: https://tt5321.github.io/Community-Event-Finder/
     ```
 4. Visit the http://localhost:5173/Community-Event-Finder/
 
-# Using the application
+# Using The Application
 - On the Home Page (EventFinderPage):
     - Click "+ Create New Event" button to create an new event (jumps to the CreateEventPage)
     - Click "- Delete Event(s)" button to delete events (jumps to the DeleteEventPage)
@@ -41,7 +41,7 @@ Visit: https://tt5321.github.io/Community-Event-Finder/
     - Click the "Delete" button to delete the selected events, this will update the backend datastore
     - Click the "Back to Home" to go back to the Home page
 
-# CRUD operations
+# CRUD Operations
 - Create: create an event
 - Read: fetch and display events from the firestore
 - Update: click the "registered" checkbox to update the registration status for events and updates to the firestore
@@ -63,11 +63,10 @@ Visit: https://tt5321.github.io/Community-Event-Finder/
 
 # Deployment
 - Deployed on GitHub Pages
-- Deployed on Firebase
 
-# Video
-- Demo Video: 
-- Supporting Video: 
+# Videos
+- Demo Video: https://youtu.be/oZ8SIy5wWgc
+- Supporting Video (functional programming response): https://youtu.be/2F9MQ3TXfIE
 
 # Mockups & Diagram
 - Mockups & React Hierarchy: https://www.figma.com/design/L13WAOoRMawlsu2mxm0Vnz/Project2-Community-Event-Finder?node-id=0-1&t=i65rLGUAfrD2dtqb-1
